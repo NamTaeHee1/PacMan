@@ -22,6 +22,7 @@ public class PlayerControl : MonoBehaviour
 
     public void GetInputValue()
     {
-        if()
+        string ButtonName = EventSystem.current.currentSelectedGameObject.name.Replace("Button", "");
+        print(ButtonName);
     }
 }
