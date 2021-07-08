@@ -2607,7 +2607,7 @@ GameObject:
   - component: {fileID: 1902695262}
   - component: {fileID: 1902695263}
   m_Layer: 0
-  m_Name: New Piskel (3)_0 (3)
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
