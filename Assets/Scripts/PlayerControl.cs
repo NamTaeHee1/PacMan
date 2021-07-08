@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -21,6 +22,6 @@ public class PlayerControl : MonoBehaviour
 
     public void GetInputValue()
     {
-
+        if()
     }
 }
