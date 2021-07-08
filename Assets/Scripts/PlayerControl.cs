@@ -23,6 +23,10 @@ public class PlayerControl : MonoBehaviour
     public void GetInputValue()
     {
         string ButtonName = EventSystem.current.currentSelectedGameObject.name.Replace("Button", "");
-        print(ButtonName);
+
+        if (ButtonName.Equals("Right") || ButtonName.Equals("Left"))
+            h = ButtonName.Equals("Right") ? 1f : -1f;
+        if (ButtonName.Equals("Up") || ButtonName.Equals("Down"))
+            v = ButtonName.Equals("Up") ? 1f : -1f;
     }
 }
