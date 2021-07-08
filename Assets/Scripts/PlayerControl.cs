@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
     private Transform PlayerTransform = null;
 
     private float MoveSpeed = 3.0f;
+    float h, v = 0;
 
     private void Start()
     {
@@ -15,9 +16,11 @@ public class PlayerControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-
         PlayerTransform.Translate(new Vector2(h, v) * Time.deltaTime * MoveSpeed);
+    }
+
+    public void GetInputValue()
+    {
+
     }
 }
