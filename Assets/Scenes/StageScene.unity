@@ -773,7 +773,7 @@ GameObject:
   - component: {fileID: 463159352}
   - component: {fileID: 463159353}
   m_Layer: 0
-  m_Name: New Piskel (3)_0
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1780,7 +1780,7 @@ GameObject:
   - component: {fileID: 604755054}
   - component: {fileID: 604755055}
   m_Layer: 0
-  m_Name: New Piskel (3)_0 (1)
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1862,7 +1862,7 @@ GameObject:
   - component: {fileID: 793040856}
   - component: {fileID: 793040857}
   m_Layer: 0
-  m_Name: New Piskel (3)_0 (2)
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
