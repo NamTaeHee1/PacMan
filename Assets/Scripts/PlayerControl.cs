@@ -7,6 +7,8 @@ public class PlayerControl : MonoBehaviour
 {
     private Transform PlayerTransform = null;
 
+    private SpriteRenderer SelectButtonImage;
+
     private float MoveSpeed = 3.0f;
     float h, v = 0;
 
@@ -23,6 +25,8 @@ public class PlayerControl : MonoBehaviour
     public void InputButtonDown()
     {
         string ButtonName = EventSystem.current.currentSelectedGameObject.name.Replace("Button", "");
+
+        if()
 
         if (ButtonName.Equals("Right") || ButtonName.Equals("Left"))
             h = ButtonName.Equals("Right") ? 1f : -1f;
