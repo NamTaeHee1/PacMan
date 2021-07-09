@@ -38,5 +38,7 @@ public class PlayerControl : MonoBehaviour
     public void InputButtonUp()
     {
         EventSystem.current.currentSelectedGameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
+        h = 0;
+        v = 0;
     }
 }
