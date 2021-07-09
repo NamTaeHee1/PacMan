@@ -30,6 +30,8 @@ public class PlayerControl : MonoBehaviour
         if (ButtonName.Equals("Right") || ButtonName.Equals("Left"))
         {
             h = ButtonName.Equals("Right") ? 1f : -1f;
+            if (Physics2D.Raycast(transform.position, new Vector2(h, 0) * 3.0f, 1.0f, LayerMask.GetMask("Map")))
+                h = 0;
         }
         else if (ButtonName.Equals("Up") || ButtonName.Equals("Down"))
         {
