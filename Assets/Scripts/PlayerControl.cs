@@ -29,10 +29,7 @@ public class PlayerControl : MonoBehaviour
 
         if (ButtonName.Equals("Right") || ButtonName.Equals("Left"))
         {
-            if(ButtonName.Equals("Right"))
-            {
-                
-            }
+            v = ButtonName.Equals("Up") ? 1f : -1f;
         }
         else if (ButtonName.Equals("Up") || ButtonName.Equals("Down"))
         {
