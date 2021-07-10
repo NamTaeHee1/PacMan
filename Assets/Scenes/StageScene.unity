@@ -2826,6 +2826,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ffd1acf72474ee489fab14a8025d390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectButtonImages:
+  - {fileID: 2600062803337792277}
+  - {fileID: 2600062804051844931}
+  - {fileID: 2600062804207099125}
+  - {fileID: 2600062804775164019}
 --- !u!58 &7648504644873013495
 CircleCollider2D:
   m_ObjectHideFlags: 0

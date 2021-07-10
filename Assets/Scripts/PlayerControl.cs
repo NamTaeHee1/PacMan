@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
 {
     private Transform PlayerTransform = null;
 
-    private SpriteRenderer SelectButtonImage;
+    [SerializeField] private SpriteRenderer[] SelectButtonImages = null;
 
     private float MoveSpeed = 3.0f;
     float h, v = 0;
@@ -36,12 +36,17 @@ public class PlayerControl : MonoBehaviour
             v = ButtonName.Equals("Up") ? 1f : -1f;
         }
 
-        SelectButtonImage.color = new Color32(32, 32, 255, 255);
+        for(int i = 0; i < SelectButtonImages.Length; i++)
+        {
+            if(SelectButtonImages[i].gameObject.ToString().Contains(ButtonName))
+                SelectButtonImages[i].color = new Color32(32, 32, 255, 255);
+        }
     }
 
     public void InputButtonUp()
     {
-        SelectButtonImage.color = Color.white;
+        for (int i = 0; i < SelectButtonImages.Length; i++)
+            SelectButtonImages[i].color = Color.white;
         h = 0;
         v = 0;
     }
