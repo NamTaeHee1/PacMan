@@ -133,9 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 109614715}
   - component: {fileID: 109614714}
-  - component: {fileID: 109614713}
   - component: {fileID: 109614712}
   - component: {fileID: 109614716}
+  - component: {fileID: 109614713}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1022,7 +1022,7 @@ GameObject:
   - component: {fileID: 522662648}
   - component: {fileID: 522662647}
   - component: {fileID: 522662646}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MapWallCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
