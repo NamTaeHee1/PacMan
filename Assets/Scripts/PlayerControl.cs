@@ -38,7 +38,7 @@ public class PlayerControl : MonoBehaviour
 
         for(int i = 0; i < SelectButtonImages.Length; i++)
         {
-            if(SelectButtonImages[i].gameObject.ToString().Contains(ButtonName))
+            if(SelectButtonImages[i].transform.parent.transform.parent.gameObject.ToString().Contains(ButtonName))
                 SelectButtonImages[i].color = new Color32(32, 32, 255, 255);
         }
     }
