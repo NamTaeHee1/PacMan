@@ -25,11 +25,11 @@ public class PlayerControl : MonoBehaviour
     public void InputButtonDown()
     {
         string ButtonName = EventSystem.current.currentSelectedGameObject.name.Replace("Button", "");
-        SelectButtonImage = EventSystem.current.currentSelectedGameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>();
 
         if (ButtonName.Equals("Right") || ButtonName.Equals("Left"))
         {
             h = ButtonName.Equals("Right") ? 1f : -1f;
+
         }
         else if (ButtonName.Equals("Up") || ButtonName.Equals("Down"))
         {
