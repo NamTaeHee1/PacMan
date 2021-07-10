@@ -1275,7 +1275,7 @@ GameObject:
   - component: {fileID: 1651007145}
   - component: {fileID: 1651007144}
   m_Layer: 5
-  m_Name: TextStart
+  m_Name: TextQuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
