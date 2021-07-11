@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ColorInfo : MonoBehaviour
 {
     private SpriteRenderer CharacterColorImage;
+
     private void Awake()
     {
         CharacterColorImage = transform.GetChild(0).GetComponent<SpriteRenderer>();
