@@ -12,16 +12,6 @@ public class MainMenuButtonControl : MonoBehaviour
 
     }
 
-    public void ClickStore()
-    {
-        Debug.Log("StorePanel");
-    }
-
-    public void ClickSetting()
-    {
-        Debug.Log("SettingPanel");
-    }
-
     public void ClickQuit()
     {
         Application.Quit();
