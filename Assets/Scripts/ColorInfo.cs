@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class ColorInfo : ScriptableObject
+public class ColorInfo : MonoBehaviour
 {
-    [SerializeField] private Color32 CharacterColor;
-    [SerializeField] private string ColorName;
+    public Color32 CharacterColor;
+    public string ColorName;
 }
