@@ -8,25 +8,34 @@ public class ColorInfo : MonoBehaviour
 {
     public Color32 CharacterColor;
     public Color32 TextColor;
+
     public string ColorText;
+
     public int NecessaryElectronic;
+
+    private SpriteRenderer ColorSpriteRenderer;
+
+    private TextMeshProUGUI ColorTextMeshPro;
 
     public bool isHaveThisColor = false;
     public bool isSelectThisColor = false;
 
     private void Awake()
     {
+        ColorSpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        ColorTextMeshPro = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+
         if (!isHaveThisColor)
         {
-            transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color32(CharacterColor.r, CharacterColor.g, CharacterColor.b, 70);
-            transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color32(TextColor.r, TextColor.g, TextColor.b, 70);
+            ColorSpriteRenderer.color = new Color32(CharacterColor.r, CharacterColor.g, CharacterColor.b, 70);
+            ColorTextMeshPro.color = new Color32(TextColor.r, TextColor.g, TextColor.b, 70);
         }
         else
         {
-            transform.GetChild(0).GetComponent<SpriteRenderer>().color = CharacterColor;
-            transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = TextColor;
+            ColorSpriteRenderer.color = CharacterColor;
+            ColorTextMeshPro.color = TextColor;
         }
-        transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = ColorText;
+        ColorTextMeshPro.text = ColorText;
     }
 
     public void TurnOnOff(bool isON)
