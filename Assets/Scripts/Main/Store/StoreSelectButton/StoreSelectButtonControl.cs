@@ -17,16 +17,23 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
         public void SelectButtonStateCheck()
         {
             StoreSelectButton.gameObject.SetActive(!StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel].isSelectThisColor);
-            StoreSelectButtonText.text = StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel].isHaveThisColor ? "선택" : StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel].NecessaryElectronic.ToString();
+            StoreSelectButtonText.text = StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel].isHaveThisColor ? "선택" : StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel].NecessaryPoint.ToString();
         }
 
         public void SelectThisColor()
         {
             ColorInfo CurrentColorInfo = StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel];
-            StoreManager.CharacterColor.TurnOnOff(false);
-            StoreManager.CharacterColor = CurrentColorInfo;
-            StoreManager.CharacterColor.TurnOnOff(true);
+
+            if (!CurrentColorInfo.isHaveThisColor)
+                CurrentColorInfo.BuyColor();
+            else
+            {
+                StoreManager.CharacterColor.TurnOnOff(false);
+                StoreManager.CharacterColor = CurrentColorInfo;
+                StoreManager.CharacterColor.TurnOnOff(true);
+            }
             SelectButtonStateCheck();
+            FindObjectOfType<StoreManager>().ReloadPointMoney();
         }
     }
 }

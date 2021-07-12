@@ -11,7 +11,7 @@ public class ColorInfo : MonoBehaviour
 
     public string ColorText;
 
-    public int NecessaryElectronic;
+    public int NecessaryPoint;
 
     private SpriteRenderer ColorSpriteRenderer;
 
@@ -49,9 +49,15 @@ public class ColorInfo : MonoBehaviour
         isSelectThisColor = isON;
     }
 
-    public void BuyColor(ColorInfo Color)
+    public void BuyColor()
     {
+        int Money = DanielLochner.Assets.SimpleScrollSnap.StoreManager.PointMoeny;
 
+        if(Money >= NecessaryPoint)
+        {
+            DanielLochner.Assets.SimpleScrollSnap.StoreManager.PointMoeny -= this.NecessaryPoint;
+            isHaveThisColor = true;
+        }
     }
 
 }

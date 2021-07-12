@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace DanielLochner.Assets.SimpleScrollSnap
 {
     public class StoreManager : MonoBehaviour
     {
-        public int PointMoeny = 0;
+        public static int PointMoeny = 3000;
         int SelectedPanelIndex = 0;
 
         [SerializeField] private GameObject CharacterColorContent;
@@ -16,9 +17,12 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         [SerializeField] private SimpleScrollSnap CharacterSimpleScrollSnap;
 
+        [SerializeField] private TextMeshProUGUI PointMoneyText;
+
         private void Awake()
         {
             CharacterColorListUpdate();
+            ReloadPointMoney();
         }
 
         private void Start()
@@ -44,6 +48,11 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                 }
             }
             CharacterSimpleScrollSnap.GoToPanel(SelectedPanelIndex);
+        }
+
+        public void ReloadPointMoney()
+        {
+            PointMoneyText.text = string.Format("Point : {0}", PointMoeny.ToString());
         }
     }
 }
