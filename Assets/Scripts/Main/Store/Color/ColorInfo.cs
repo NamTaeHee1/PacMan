@@ -8,6 +8,7 @@ public class ColorInfo : MonoBehaviour
 {
     private SpriteRenderer CharacterColorImage;
     private TextMeshPro CharacterColorText;
+    public int NecessaryElectronic;
 
     public bool isHaveThisColor = false;
     public bool isSelectThisColor = false;
