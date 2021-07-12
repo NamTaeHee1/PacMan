@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace DanielLochner.Assets.SimpleScrollSnap {
-    public class SelectButtonControl : MonoBehaviour
+    public class StoreSelectButtonControl : MonoBehaviour
     {
         [SerializeField] private SimpleScrollSnap CharacterColorScrollSnap;
 
         [SerializeField] private GameObject SelectButton;
+
+
 
         private void SelectButtonStateCheck()
         {
