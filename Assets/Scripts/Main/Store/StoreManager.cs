@@ -13,6 +13,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         public static List<ColorInfo> CharacterColorList = new List<ColorInfo>();
         public static ColorInfo CharacterColor;
 
+        [SerializeField] private SimpleScrollSnap CharacterSimpleScrollSnap;
+
         private void Awake()
         {
             CharacterColorListUpdate();
@@ -32,7 +34,12 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         public void CharacterScrollSnapUpdate()
         {
-
+            int SelectedPanelIndex = 0;
+            for (int i = 0; i < CharacterColorContent.transform.childCount; i++)
+            {
+                if (CharacterColorContent.transform.GetChild(i).GetComponent<ColorInfo>().isSelectThisColor)
+                    SelectedPanelIndex = i;
+            }
         }
     }
 }
