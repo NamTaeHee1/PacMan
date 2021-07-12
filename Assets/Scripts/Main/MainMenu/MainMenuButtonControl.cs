@@ -12,6 +12,11 @@ public class MainMenuButtonControl : MonoBehaviour
 
     }
 
+    public void ClickStore()
+    {
+        FindObjectOfType<DanielLochner.Assets.SimpleScrollSnap.StoreManager>().CharacterScrollSnapUpdate();
+    }
+
     public void ClickQuit()
     {
         Application.Quit();

@@ -49,4 +49,9 @@ public class ColorInfo : MonoBehaviour
         isSelectThisColor = isON;
     }
 
+    public void BuyColor(ColorInfo Color)
+    {
+
+    }
+
 }

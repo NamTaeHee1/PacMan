@@ -7,6 +7,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
     public class StoreManager : MonoBehaviour
     {
         public int PointMoeny = 0;
+        int SelectedPanelIndex = 0;
 
         [SerializeField] private GameObject CharacterColorContent;
 
@@ -18,11 +19,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         private void Awake()
         {
             CharacterColorListUpdate();
-        }
-
-        private void OnEnable()
-        {
-            CharacterScrollSnapUpdate();
         }
 
         private void Start()
@@ -39,7 +35,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         public void CharacterScrollSnapUpdate()
         {
-            int SelectedPanelIndex = 0;
             for (int i = 0; i < CharacterColorContent.transform.childCount; i++)
             {
                 if (CharacterColorContent.transform.GetChild(i).GetComponent<ColorInfo>().isSelectThisColor)
