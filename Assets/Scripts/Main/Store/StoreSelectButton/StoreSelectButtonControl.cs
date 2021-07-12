@@ -12,11 +12,11 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
 
         [SerializeField] private TextMeshProUGUI StoreSelectButtonText;
 
-        private void Update() => SelectButtonStateCheck();
+        private void Start() => SelectButtonStateCheck();
 
         public void SelectButtonStateCheck()
         {
-            StoreSelectButton.gameObject.SetActive(StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel].isSelectThisColor);
+            StoreSelectButton.gameObject.SetActive(!StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel].isSelectThisColor);
             StoreSelectButtonText.text = StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel].isHaveThisColor ? "º±≈√" : StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel].NecessaryElectronic.ToString();
         }
     }
