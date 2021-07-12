@@ -6,5 +6,10 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
     public class SelectButtonControl : MonoBehaviour
     {
         [SerializeField] private SimpleScrollSnap CharacterColorScrollSnap;
+
+        public void ColorPanelChange()
+        {
+
+        }
     }
 }

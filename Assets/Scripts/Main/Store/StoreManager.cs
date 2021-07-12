@@ -11,6 +11,7 @@ public class StoreManager : MonoBehaviour
     [SerializeField] private GameObject CharacterColorContent;
 
     public static List<ColorInfo> CharacterColorList;
+    public static ColorInfo CharacterColor;
 
     private void Awake()
     {
@@ -20,6 +21,11 @@ public class StoreManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
         CharacterColorListUpdate();
+    }
+
+    private void Start()
+    {
+        CharacterColor = CharacterColorContent.transform.GetChild(0).GetComponent<ColorInfo>();
     }
 
     private void CharacterColorListUpdate()
