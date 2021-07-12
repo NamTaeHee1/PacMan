@@ -43,7 +43,10 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             for (int i = 0; i < CharacterColorContent.transform.childCount; i++)
             {
                 if (CharacterColorContent.transform.GetChild(i).GetComponent<ColorInfo>().isSelectThisColor)
+                {
                     SelectedPanelIndex = i;
+                    break;
+                }
             }
             CharacterSimpleScrollSnap.GoToPanel(SelectedPanelIndex);
         }
