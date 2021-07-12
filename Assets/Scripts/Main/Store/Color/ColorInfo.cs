@@ -40,7 +40,13 @@ public class ColorInfo : MonoBehaviour
 
     public void TurnOnOff(bool isON)
     {
+        CharacterColor.a = isON ? (byte)255 : (byte)70;
+        TextColor.a = isON ? (byte)255 : (byte)70;
 
+        ColorSpriteRenderer.color = CharacterColor;
+        ColorTextMeshPro.color = TextColor;
+
+        isSelectThisColor = isON;
     }
 
 }
