@@ -16,7 +16,7 @@ public class ColorInfo : MonoBehaviour
     private void Awake()
     {
         transform.GetChild(0).GetComponent<SpriteRenderer>().color = CharacterColor;
-        transform.GetChild(1).GetComponent<TextMeshPro>().text = ColorText;
+        transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = ColorText;
     }
 
 }
