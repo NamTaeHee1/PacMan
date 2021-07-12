@@ -26,6 +26,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
             StoreManager.CharacterColor.TurnOnOff(false);
             StoreManager.CharacterColor = CurrentColorInfo;
             StoreManager.CharacterColor.TurnOnOff(true);
+            SelectButtonStateCheck();
         }
     }
 }
