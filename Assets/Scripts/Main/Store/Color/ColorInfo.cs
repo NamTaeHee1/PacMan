@@ -29,4 +29,9 @@ public class ColorInfo : MonoBehaviour
         transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = ColorText;
     }
 
+    public void TurnOnOff(bool isON)
+    {
+
+    }
+
 }
