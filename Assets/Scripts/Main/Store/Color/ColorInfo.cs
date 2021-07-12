@@ -7,6 +7,9 @@ public class ColorInfo : MonoBehaviour
 {
     private SpriteRenderer CharacterColorImage;
 
+    public bool isHaveThisColor = false;
+    public bool isSelectThisColor = false;
+
     private void Awake()
     {
         CharacterColorImage = transform.GetChild(0).GetComponent<SpriteRenderer>();
