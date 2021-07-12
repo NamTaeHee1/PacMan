@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StoreManager : MonoBehaviour
 {
-    public StoreManager Instance;
+    public static StoreManager Instance;
 
     private void Awake()
     {
