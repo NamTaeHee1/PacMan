@@ -16,7 +16,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
 
         public void SelectButtonStateCheck()
         {
-            StoreSelectButton.SetActive(StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel].ColorName.Equals(StoreManager.CharacterColor.ColorName));
+            StoreSelectButton.SetActive(StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel].ColorText.Equals(StoreManager.CharacterColor.ColorText));
             StoreSelectButtonText.text = StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel].isHaveThisColor ? "º±≈√" : StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel].NecessaryElectronic.ToString();
         }
     }

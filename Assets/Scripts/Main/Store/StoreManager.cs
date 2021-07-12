@@ -8,7 +8,7 @@ public class StoreManager : MonoBehaviour
 
     [SerializeField] private GameObject CharacterColorContent;
 
-    public static List<ColorInfo> CharacterColorList;
+    public static List<ColorInfo> CharacterColorList = new List<ColorInfo>();
     public static ColorInfo CharacterColor;
 
     private void Awake()
@@ -26,5 +26,6 @@ public class StoreManager : MonoBehaviour
         CharacterColorList.Clear();
         for (int i = 0; i < CharacterColorContent.transform.childCount; i++)
             CharacterColorList.Add(CharacterColorContent.transform.GetChild(i).GetComponent<ColorInfo>());
+        Debug.Log(CharacterColorContent.transform.childCount);
     }
 }
