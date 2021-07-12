@@ -9,7 +9,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
 
         public void ColorPanelChange()
         {
-
+            gameObject.SetActive(StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel].ColorName.Equals(StoreManager.CharacterColor.ColorName));
         }
     }
 }
