@@ -22,7 +22,10 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
 
         public void SelectThisColor()
         {
-
+            ColorInfo CurrentColorInfo = StoreManager.CharacterColorList[CharacterColorScrollSnap.CurrentPanel];
+            StoreManager.CharacterColor.TurnOnOff(false);
+            StoreManager.CharacterColor = CurrentColorInfo;
+            StoreManager.CharacterColor.TurnOnOff(true);
         }
     }
 }
