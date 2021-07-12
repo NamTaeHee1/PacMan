@@ -20,6 +20,11 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             CharacterColorListUpdate();
         }
 
+        private void OnEnable()
+        {
+            CharacterScrollSnapUpdate();
+        }
+
         private void Start()
         {
             CharacterColor = CharacterColorContent.transform.GetChild(0).GetComponent<ColorInfo>();
@@ -40,6 +45,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                 if (CharacterColorContent.transform.GetChild(i).GetComponent<ColorInfo>().isSelectThisColor)
                     SelectedPanelIndex = i;
             }
+            CharacterSimpleScrollSnap.GoToPanel(SelectedPanelIndex);
         }
     }
 }
