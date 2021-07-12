@@ -6,6 +6,8 @@ public class StoreManager : MonoBehaviour
 {
     public static StoreManager Instance;
 
+    public int PointMoeny = 0;
+
     private void Awake()
     {
         if (Instance == null)
