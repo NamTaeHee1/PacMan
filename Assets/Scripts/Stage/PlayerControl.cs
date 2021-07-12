@@ -7,14 +7,21 @@ public class PlayerControl : MonoBehaviour
 {
     private Transform PlayerTransform = null;
 
+    private SpriteRenderer PlayerSpriteRender = null;
     [SerializeField] private SpriteRenderer[] SelectButtonImages = null;
 
     private float MoveSpeed = 3.0f;
     float h, v = 0;
 
-    private void Start()
+    private void Awake()
     {
         PlayerTransform = GetComponent<Transform>();
+        PlayerSpriteRender = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
+        PlayerSpriteRender.color = DanielLochner.Assets.SimpleScrollSnap.StoreManager.CharacterColor.SpriteColor;
     }
 
     private void FixedUpdate()

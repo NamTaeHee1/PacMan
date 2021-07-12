@@ -6,7 +6,7 @@ using TMPro;
 
 public class ColorInfo : MonoBehaviour
 {
-    public Color32 CharacterColor;
+    public Color32 SpriteColor;
     public Color32 TextColor;
 
     public string ColorText;
@@ -27,12 +27,12 @@ public class ColorInfo : MonoBehaviour
 
         if (!isHaveThisColor)
         {
-            ColorSpriteRenderer.color = new Color32(CharacterColor.r, CharacterColor.g, CharacterColor.b, 70);
+            ColorSpriteRenderer.color = new Color32(SpriteColor.r, SpriteColor.g, SpriteColor.b, 70);
             ColorTextMeshPro.color = new Color32(TextColor.r, TextColor.g, TextColor.b, 70);
         }
         else
         {
-            ColorSpriteRenderer.color = CharacterColor;
+            ColorSpriteRenderer.color = SpriteColor;
             ColorTextMeshPro.color = TextColor;
         }
         ColorTextMeshPro.text = ColorText;
@@ -40,10 +40,10 @@ public class ColorInfo : MonoBehaviour
 
     public void TurnOnOff(bool isON)
     {
-        CharacterColor.a = isON ? (byte)255 : (byte)70;
+        SpriteColor.a = isON ? (byte)255 : (byte)70;
         TextColor.a = isON ? (byte)255 : (byte)70;
 
-        ColorSpriteRenderer.color = CharacterColor;
+        ColorSpriteRenderer.color = SpriteColor;
         ColorTextMeshPro.color = TextColor;
 
         isSelectThisColor = isON;

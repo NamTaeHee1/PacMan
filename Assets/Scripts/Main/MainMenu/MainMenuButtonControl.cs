@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class MainMenuButtonControl : MonoBehaviour
@@ -9,7 +10,7 @@ public class MainMenuButtonControl : MonoBehaviour
     TextMeshProUGUI ClickButtonText;
     public void ClickGameStart()
     {
-
+        SceneManager.LoadScene("StageScene");
     }
 
     public void ClickStore()

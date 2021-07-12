@@ -272,14 +272,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b39bba87bbbb04f8096d686219d8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterColor:
+  SpriteColor:
     serializedVersion: 2
     rgba: 4294967295
   TextColor:
     serializedVersion: 2
     rgba: 4282843135
   ColorText: Yellow
-  NecessaryElectronic: 0
+  NecessaryPoint: 0
   isHaveThisColor: 1
   isSelectThisColor: 1
 --- !u!1 &125718939
@@ -713,9 +713,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7e3a90885de644dbc25866d4c00aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PointMoeny: 0
   CharacterColorContent: {fileID: 1783255008}
-  CharacterSimpleScrollSnap: {fileID: 0}
+  CharacterSimpleScrollSnap: {fileID: 354972204}
+  PointMoneyText: {fileID: 1011708213}
 --- !u!4 &249397023
 Transform:
   m_ObjectHideFlags: 0
@@ -1920,6 +1920,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1990286583}
+          m_TargetAssemblyTypeName: MainMenuButtonControl, Assembly-CSharp
+          m_MethodName: ClickGameStart
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 2
     callback:
       m_PersistentCalls:
@@ -2555,14 +2567,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b39bba87bbbb04f8096d686219d8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterColor:
+  SpriteColor:
     serializedVersion: 2
     rgba: 4278208255
   TextColor:
     serializedVersion: 2
     rgba: 4278208255
   ColorText: Orange
-  NecessaryElectronic: 5000
+  NecessaryPoint: 2500
   isHaveThisColor: 0
   isSelectThisColor: 0
 --- !u!1 &1006605385
@@ -3221,14 +3233,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b39bba87bbbb04f8096d686219d8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterColor:
+  SpriteColor:
     serializedVersion: 2
     rgba: 4278190335
   TextColor:
     serializedVersion: 2
     rgba: 4282795775
   ColorText: Red
-  NecessaryElectronic: 5000
+  NecessaryPoint: 2500
   isHaveThisColor: 0
   isSelectThisColor: 0
 --- !u!1 &1305180187
@@ -4026,14 +4038,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b39bba87bbbb04f8096d686219d8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterColor:
+  SpriteColor:
     serializedVersion: 2
-    rgba: 4282842950
+    rgba: 4278255360
   TextColor:
     serializedVersion: 2
     rgba: 4282842950
   ColorText: Green
-  NecessaryElectronic: 5000
+  NecessaryPoint: 2500
   isHaveThisColor: 0
   isSelectThisColor: 0
 --- !u!1 &1565593404
@@ -4872,14 +4884,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b39bba87bbbb04f8096d686219d8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterColor:
+  SpriteColor:
     serializedVersion: 2
     rgba: 4278255485
   TextColor:
     serializedVersion: 2
     rgba: 4278255485
   ColorText: Yellow-Green
-  NecessaryElectronic: 5000
+  NecessaryPoint: 2500
   isHaveThisColor: 0
   isSelectThisColor: 0
 --- !u!1 &1990286581
