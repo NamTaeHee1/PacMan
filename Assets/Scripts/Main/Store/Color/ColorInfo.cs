@@ -7,6 +7,7 @@ using TMPro;
 public class ColorInfo : MonoBehaviour
 {
     public Color32 CharacterColor;
+    public Color32 TextColor;
     public string ColorText;
     public int NecessaryElectronic;
 
@@ -15,7 +16,16 @@ public class ColorInfo : MonoBehaviour
 
     private void Awake()
     {
-        transform.GetChild(0).GetComponent<SpriteRenderer>().color = CharacterColor;
+        if (!isHaveThisColor)
+        {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color32(CharacterColor.r, CharacterColor.g, CharacterColor.b, 70);
+            transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color32(TextColor.r, TextColor.g, TextColor.b, 70);
+        }
+        else
+        {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().color = CharacterColor;
+            transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = TextColor;
+        }
         transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = ColorText;
     }
 
