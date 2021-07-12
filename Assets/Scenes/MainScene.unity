@@ -272,10 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b39bba87bbbb04f8096d686219d8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterColor:
-    serializedVersion: 2
-    rgba: 0
-  ColorName: 
+  NecessaryElectronic: 0
+  isHaveThisColor: 1
+  isSelectThisColor: 1
 --- !u!1 &125718939
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,6 +677,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244381446}
   m_CullTransparentMesh: 1
+--- !u!1 &249397021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 249397023}
+  - component: {fileID: 249397022}
+  m_Layer: 0
+  m_Name: StoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &249397022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249397021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7e3a90885de644dbc25866d4c00aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointMoeny: 0
+  CharacterColorContent: {fileID: 1783255008}
+--- !u!4 &249397023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249397021}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &354972202
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,7 +802,20 @@ MonoBehaviour:
   useUnscaledTime: 0
   onPanelChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 792563872}
+        m_TargetAssemblyTypeName: DanielLochner.Assets.SimpleScrollSnap.StoreSelectButtonControl,
+          Assembly-CSharp
+        m_MethodName: SelectButtonStateCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPanelSelecting:
     m_PersistentCalls:
       m_Calls: []
@@ -767,7 +824,20 @@ MonoBehaviour:
       m_Calls: []
   onPanelChanging:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 792563872}
+        m_TargetAssemblyTypeName: DanielLochner.Assets.SimpleScrollSnap.StoreSelectButtonControl,
+          Assembly-CSharp
+        m_MethodName: SelectButtonStateCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   transitionEffects: []
 --- !u!114 &354972205
 MonoBehaviour:
@@ -2092,6 +2162,7 @@ GameObject:
   - component: {fileID: 792563869}
   - component: {fileID: 792563871}
   - component: {fileID: 792563870}
+  - component: {fileID: 792563872}
   m_Layer: 5
   m_Name: StorePanel
   m_TagString: Untagged
@@ -2161,6 +2232,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792563868}
   m_CullTransparentMesh: 1
+--- !u!114 &792563872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792563868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed541323580bb704fbb363a20e0f59f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterColorScrollSnap: {fileID: 354972204}
+  StoreSelectButton: {fileID: 889345819}
+  StoreSelectButtonText: {fileID: 590610837}
 --- !u!1 &811379007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2448,10 +2534,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b39bba87bbbb04f8096d686219d8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterColor:
-    serializedVersion: 2
-    rgba: 0
-  ColorName: 
+  NecessaryElectronic: 5000
+  isHaveThisColor: 0
+  isSelectThisColor: 0
 --- !u!1 &1006605385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2620,7 +2705,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 479.74246, y: 411.6}
+  m_AnchoredPosition: {x: 479.74246, y: 443.71}
   m_SizeDelta: {x: 807.9, y: 71.5}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1011708213
@@ -3108,10 +3193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b39bba87bbbb04f8096d686219d8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterColor:
-    serializedVersion: 2
-    rgba: 0
-  ColorName: 
+  NecessaryElectronic: 5000
+  isHaveThisColor: 0
+  isSelectThisColor: 0
 --- !u!1 &1305180187
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,10 +3991,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b39bba87bbbb04f8096d686219d8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterColor:
-    serializedVersion: 2
-    rgba: 0
-  ColorName: 
+  NecessaryElectronic: 5000
+  isHaveThisColor: 0
+  isSelectThisColor: 0
 --- !u!1 &1565593404
 GameObject:
   m_ObjectHideFlags: 0
@@ -4445,7 +4528,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0.0023117065, y: 0}
+  m_AnchoredPosition: {x: 0.00050354004, y: 0}
   m_SizeDelta: {x: 130, y: 250}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &1829893992
@@ -4747,10 +4830,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b39bba87bbbb04f8096d686219d8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterColor:
-    serializedVersion: 2
-    rgba: 0
-  ColorName: 
+  NecessaryElectronic: 5000
+  isHaveThisColor: 0
+  isSelectThisColor: 0
 --- !u!1 &1990286581
 GameObject:
   m_ObjectHideFlags: 0

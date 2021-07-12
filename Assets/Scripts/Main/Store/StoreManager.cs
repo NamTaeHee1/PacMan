@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class StoreManager : MonoBehaviour
 {
-    public static StoreManager Instance;
-
     public int PointMoeny = 0;
 
     [SerializeField] private GameObject CharacterColorContent;
@@ -15,11 +13,6 @@ public class StoreManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
         CharacterColorListUpdate();
     }
 
