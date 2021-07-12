@@ -10,6 +10,8 @@ public class PlayerControl : MonoBehaviour
     private SpriteRenderer PlayerSpriteRender = null;
     [SerializeField] private SpriteRenderer[] SelectButtonImages = null;
 
+    private Animator PlayerAnimator = null;
+
     private float MoveSpeed = 3.0f;
     float h, v = 0;
 
@@ -17,6 +19,7 @@ public class PlayerControl : MonoBehaviour
     {
         PlayerTransform = GetComponent<Transform>();
         PlayerSpriteRender = GetComponent<SpriteRenderer>();
+        PlayerAnimator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -26,6 +29,7 @@ public class PlayerControl : MonoBehaviour
 
     private void FixedUpdate()
     {
+        PlayerAnimator.SetBool("isMove", (h != 0 || v != 0));
         PlayerTransform.Translate(new Vector2(h, v) * Time.deltaTime * MoveSpeed);
     }
 
@@ -56,5 +60,10 @@ public class PlayerControl : MonoBehaviour
             SelectButtonImages[i].color = Color.white;
         h = 0;
         v = 0;
+    }
+
+    public Color32 GetPlayerColor()
+    {
+        return PlayerSpriteRender.color;
     }
 }
