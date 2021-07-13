@@ -281,7 +281,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1892170794}
-  - component: {fileID: 1892170793}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -289,23 +288,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1892170793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892170792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ffd1acf72474ee489fab14a8025d390, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SelectButtonImages:
-  - {fileID: 2600062803337792277}
-  - {fileID: 2600062804051844931}
-  - {fileID: 2600062804207099125}
-  - {fileID: 2600062804775164019}
 --- !u!4 &1892170794
 Transform:
   m_ObjectHideFlags: 0
@@ -2892,6 +2874,7 @@ GameObject:
   - component: {fileID: 7648504644873013490}
   - component: {fileID: 7648504644873013495}
   - component: {fileID: 7648504644873013498}
+  - component: {fileID: 7648504644873013499}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2918,3 +2901,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7648504644873013499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648504644873013497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ffd1acf72474ee489fab14a8025d390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerTransform: {fileID: 7648504644873013493}
+  PlayerSpriteRender: {fileID: 7648504644873013492}
+  SelectButtonImages:
+  - {fileID: 2600062803337792277}
+  - {fileID: 2600062804051844931}
+  - {fileID: 2600062804207099125}
+  - {fileID: 2600062804775164019}
+  PlayerAnimator: {fileID: 7648504644873013498}

@@ -5,11 +5,11 @@ using UnityEngine.EventSystems;
 
 public class PlayerControl : MonoBehaviour
 {
-    private Transform PlayerTransform = null;
+    [SerializeField] private Transform PlayerParent = null;
 
     private SpriteRenderer PlayerSpriteRender = null;
-    [SerializeField] private SpriteRenderer[] SelectButtonImages = null;
-
+    private SpriteRenderer[] SelectButtonImages = null;
+    
     private Animator PlayerAnimator = null;
 
     private float MoveSpeed = 3.0f;
@@ -17,7 +17,6 @@ public class PlayerControl : MonoBehaviour
 
     private void Awake()
     {
-        PlayerTransform = GetComponent<Transform>();
         PlayerSpriteRender = GetComponent<SpriteRenderer>();
         PlayerAnimator = GetComponent<Animator>();
     }
@@ -30,7 +29,7 @@ public class PlayerControl : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerAnimator.SetBool("isMove", (h != 0 || v != 0));
-        PlayerTransform.Translate(new Vector2(h, v) * Time.deltaTime * MoveSpeed);
+        PlayerParent.Translate(new Vector2(h, v) * Time.deltaTime * MoveSpeed);
     }
 
     public void InputButtonDown()
@@ -40,7 +39,6 @@ public class PlayerControl : MonoBehaviour
         if (ButtonName.Equals("Right") || ButtonName.Equals("Left"))
         {
             h = ButtonName.Equals("Right") ? 1f : -1f;
-
         }
         else if (ButtonName.Equals("Up") || ButtonName.Equals("Down"))
         {
