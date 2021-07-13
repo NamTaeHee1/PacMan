@@ -4206,7 +4206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 418064417}
   m_Layer: 0
-  m_Name: OnePart (1)
+  m_Name: TwoPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4279,7 +4279,7 @@ Transform:
   - {fileID: 1821409801}
   - {fileID: 942405363}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &439610032
 GameObject:
@@ -9316,7 +9316,7 @@ Transform:
   - {fileID: 1591348669}
   - {fileID: 711369889}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &968692070 stripped
 Transform:
@@ -12277,7 +12277,7 @@ Transform:
   - {fileID: 132040320}
   - {fileID: 807480917}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1355166344
 PrefabInstance:
@@ -13584,7 +13584,7 @@ Transform:
   - {fileID: 1636866826}
   - {fileID: 1873976289}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1541412394 stripped
 Transform:
