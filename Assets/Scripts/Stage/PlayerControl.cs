@@ -28,8 +28,19 @@ public class PlayerControl : MonoBehaviour
 
     private void FixedUpdate()
     {
+        PlayerMove();
+        PlayerRotate();
+    }
+
+    private void PlayerMove()
+    {
         PlayerAnimator.SetBool("isMove", (h != 0 || v != 0));
         PlayerParent.Translate(new Vector2(h, v) * Time.deltaTime * MoveSpeed);
+    }
+
+    private void PlayerRotate()
+    {
+        
     }
 
     public void InputButtonDown()
