@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class PlayerControl : MonoBehaviour
 {
     [SerializeField] private Transform PlayerParent = null;
+    private Transform PlayerTransform = null;
 
     private SpriteRenderer PlayerSpriteRender = null;
     [SerializeField] private SpriteRenderer[] SelectButtonImages = null;
@@ -17,6 +18,7 @@ public class PlayerControl : MonoBehaviour
 
     private void Awake()
     {
+        PlayerTransform = GetComponent<Transform>();
         PlayerSpriteRender = GetComponent<SpriteRenderer>();
         PlayerAnimator = GetComponent<Animator>();
     }
@@ -29,7 +31,6 @@ public class PlayerControl : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerMove();
-        PlayerRotate();
     }
 
     private void PlayerMove()
@@ -38,22 +39,20 @@ public class PlayerControl : MonoBehaviour
         PlayerParent.Translate(new Vector2(h, v) * Time.deltaTime * MoveSpeed);
     }
 
-    private void PlayerRotate()
-    {
-        
-    }
-
     public void InputButtonDown()
     {
         string ButtonName = EventSystem.current.currentSelectedGameObject.name.Replace("Button", "");
+        PlayerTransform.eulerAngles = Vector3.zero;
 
         if (ButtonName.Equals("Right") || ButtonName.Equals("Left"))
         {
             h = ButtonName.Equals("Right") ? 1f : -1f;
+            PlayerTransform.eulerAngles = new Vector3(0, 0, (h == 1) ? 0f : 180f);
         }
         else if (ButtonName.Equals("Up") || ButtonName.Equals("Down"))
         {
             v = ButtonName.Equals("Up") ? 1f : -1f;
+            PlayerTransform.eulerAngles = new Vector3(0, 0, v * 90);
         }
 
         for(int i = 0; i < SelectButtonImages.Length; i++)
