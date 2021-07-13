@@ -70,5 +70,9 @@ public class PlayerControl : MonoBehaviour
         v = 0;
     }
 
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name.Equals("MapPassageLeft") || collision.gameObject.name.Equals("MapPassageRight"))
+            PlayerTransform.position = collision.gameObject.transform.GetChild(0).gameObject.transform.position;
+    }
 }
