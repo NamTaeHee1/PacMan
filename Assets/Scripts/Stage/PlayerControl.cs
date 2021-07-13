@@ -8,7 +8,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private Transform PlayerParent = null;
 
     private SpriteRenderer PlayerSpriteRender = null;
-    private SpriteRenderer[] SelectButtonImages = null;
+    [SerializeField] private SpriteRenderer[] SelectButtonImages = null;
     
     private Animator PlayerAnimator = null;
 
@@ -60,8 +60,5 @@ public class PlayerControl : MonoBehaviour
         v = 0;
     }
 
-    public Color32 GetPlayerColor()
-    {
-        return PlayerSpriteRender.color;
-    }
+
 }
