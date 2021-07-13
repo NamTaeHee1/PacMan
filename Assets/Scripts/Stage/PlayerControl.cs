@@ -74,5 +74,10 @@ public class PlayerControl : MonoBehaviour
     {
         if (collision.gameObject.name.Equals("MapPassageLeft") || collision.gameObject.name.Equals("MapPassageRight"))
             PlayerTransform.position = collision.gameObject.transform.GetChild(0).gameObject.transform.position;
+        if(collision.gameObject.name.Equals("SmallBallon") || collision.gameObject.name.Equals("BigBallon"))
+        {
+            collision.gameObject.SetActive(false);
+            //Point ¿Ã¸®±â
+        }
     }
 }
