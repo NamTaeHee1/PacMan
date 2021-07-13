@@ -3848,8 +3848,9 @@ GameObject:
   m_Component:
   - component: {fileID: 376811322}
   - component: {fileID: 376811321}
+  - component: {fileID: 376811323}
   m_Layer: 0
-  m_Name: sprites32_23
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3920,6 +3921,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &376811323
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376811320}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000000017592853, y: -0.0046784324}
+  serializedVersion: 2
+  m_Radius: 0.1396354
 --- !u!4 &380703050 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5155353301666888553, guid: 5cd493e74bcad0e42b9123a7e727d140, type: 3}
