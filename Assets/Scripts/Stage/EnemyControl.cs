@@ -6,12 +6,19 @@ public class EnemyControl : MonoBehaviour
 {
     private LayerMask TileLayer;
 
-    private float rayDistance = 0.05f;
+    private float rayDistance = 0.55f;
     private float MoveSpeed = 3.0f;
 
     DirectionEnum State = DirectionEnum.Down;
 
+    private Animator EnemyAnimator;
+
     Vector2 Direction = Vector2.zero;
+
+    private void Awake()
+    {
+        EnemyAnimator = GetComponent<Animator>();
+    }
 
     private void Start()
     {
@@ -19,7 +26,13 @@ public class EnemyControl : MonoBehaviour
         GetRandomDirection();
     }
 
-    private void Update()
+    private void FixedUpdate()
+    {
+        EnemyMove();
+        EnemyChangeAnimation();
+    }
+
+    private void EnemyMove()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Direction, rayDistance, TileLayer);
 
@@ -30,6 +43,12 @@ public class EnemyControl : MonoBehaviour
         else
             GetRandomDirection();
     }
+
+    private void EnemyChangeAnimation()
+    {
+        EnemyAnimator.SetInteger("DirectionEnumValue", (int)State);
+    }
+
     private void GetRandomDirection()
     {
         Direction = Vector2.zero;
