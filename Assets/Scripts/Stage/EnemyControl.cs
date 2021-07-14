@@ -7,6 +7,7 @@ public class EnemyControl : MonoBehaviour
     private LayerMask TileLayer;
 
     private float rayDistance = 0.55f;
+    private float MoveSpeed = 3.0f;
 
     DirectionEnum State = DirectionEnum.Right;
 
@@ -20,6 +21,13 @@ public class EnemyControl : MonoBehaviour
     private void Update()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Direction, rayDistance, TileLayer);
+
+        if (hit.transform == null)
+        {
+            transform.Translate(Direction * MoveSpeed * Time.deltaTime);
+        }
+        else
+            GetRandomDirection();
     }
 
     private void GetRandomDirection()
