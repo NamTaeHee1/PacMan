@@ -16,6 +16,7 @@ public class EnemyControl : MonoBehaviour
     private void Start()
     {
         TileLayer = LayerMask.GetMask("Tile");
+        GetRandomDirection();
     }
 
     private void Update()
@@ -28,13 +29,18 @@ public class EnemyControl : MonoBehaviour
         }
         else
             GetRandomDirection();
+
+        Debug.Log(Direction.x + ", " + Direction.y);
     }
 
     private void GetRandomDirection()
     {
         Direction = Vector2.zero;
-        State = (DirectionEnum)Random.Range(0, (int)DirectionEnum.Count);
-
+        if (State == DirectionEnum.Down || State == DirectionEnum.Up)
+            State = (DirectionEnum)Random.Range(2, 4);
+        else if (State == DirectionEnum.Up || State == DirectionEnum.Down)
+            State = (DirectionEnum)Random.Range(3, 5);
+        Debug.Log(State);
         switch (State)
         {
             case DirectionEnum.Left:
