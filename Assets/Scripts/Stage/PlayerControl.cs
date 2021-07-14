@@ -72,8 +72,8 @@ public class PlayerControl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name.Equals("MapPassageLeft") || collision.gameObject.name.Equals("MapPassageRight"))
-            PlayerTransform.position = collision.gameObject.transform.GetChild(0).gameObject.transform.position;
+        if (collision.transform.CompareTag("MapPassage"))
+            PlayerTransform.position = collision.gameObject.transform.GetChild(0).transform.position;
         if(collision.gameObject.name.Equals("SmallBallon") || collision.gameObject.name.Equals("BigBallon"))
         {
             collision.gameObject.SetActive(false);
