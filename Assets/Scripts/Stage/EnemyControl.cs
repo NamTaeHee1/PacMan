@@ -6,7 +6,7 @@ public class EnemyControl : MonoBehaviour
 {
     private LayerMask TileLayer;
 
-    private float rayDistance = 0.55f;
+    private float rayDistance = 0.05f;
     private float MoveSpeed = 3.0f;
 
     DirectionEnum State = DirectionEnum.Down;
@@ -32,13 +32,11 @@ public class EnemyControl : MonoBehaviour
     }
     private void GetRandomDirection()
     {
-        Debug.Log(State);
         Direction = Vector2.zero;
-        if (State == DirectionEnum.Down || State == DirectionEnum.Up)
+        if (State == DirectionEnum.Up || State == DirectionEnum.Down)
             State = (DirectionEnum)Random.Range(0, 2);
-        else if (State == DirectionEnum.Up || State == DirectionEnum.Down)
+        else if (State == DirectionEnum.Left || State == DirectionEnum.Right)
             State = (DirectionEnum)Random.Range(2, 4);
-        Debug.Log(State);
         switch (State)
         {
             case DirectionEnum.Left:
@@ -60,6 +58,9 @@ public class EnemyControl : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.CompareTag("MapPassage"))
+        {
             transform.position = collision.transform.GetChild(0).transform.position;
+            Debug.Log("fweuf");
+        }
     }
 }
