@@ -29,7 +29,6 @@ public class EnemyControl : MonoBehaviour
     private void FixedUpdate()
     {
         EnemyMove();
-        EnemyChangeAnimation();
     }
 
     private void EnemyMove()
@@ -39,6 +38,7 @@ public class EnemyControl : MonoBehaviour
         if (hit.transform == null)
         {
             transform.Translate(Direction * MoveSpeed * Time.deltaTime);
+            EnemyChangeAnimation();
         }
         else
             GetRandomDirection();
