@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -12,6 +14,10 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private SpriteRenderer[] SelectButtonImages = null;
     
     private Animator PlayerAnimator = null;
+
+    [SerializeField] private PlayerControl pc;
+
+    [SerializeField] private TextMeshProUGUI GameOverText;
 
     private float MoveSpeed = 3.0f;
     float h, v = 0;
@@ -79,5 +85,17 @@ public class PlayerControl : MonoBehaviour
             collision.gameObject.SetActive(false);
             //Point ¿Ã¸®±â
         }
+
+        if(collision.gameObject.name.Equals("Enemy"))
+        {
+            GameOverText.gameObject.SetActive(true);
+            pc.enabled = false;
+            Invoke("BackToMain", 3.0f);
+        }
+    }
+
+    private void BackToMain()
+    {
+        SceneManager.LoadScene("MainScene");
     }
 }

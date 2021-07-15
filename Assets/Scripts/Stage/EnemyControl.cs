@@ -15,6 +15,8 @@ public class EnemyControl : MonoBehaviour
 
     Vector2 Direction = Vector2.zero;
 
+    private bool isChangeMode = false;
+
     private void Awake()
     {
         EnemyAnimator = GetComponent<Animator>();
@@ -38,17 +40,14 @@ public class EnemyControl : MonoBehaviour
         if (hit.transform == null)
         {
             transform.Translate(Direction * MoveSpeed * Time.deltaTime);
-            EnemyChangeAnimation();
+            if (isChangeMode)
+                EnemyChangeModeAnimation();
+            else
+                EnemyAnimation();
         }
         else
             GetRandomDirection();
     }
-
-    private void EnemyChangeAnimation()
-    {
-        EnemyAnimator.SetInteger("DirectionEnumValue", (int)State);
-    }
-
     private void GetRandomDirection()
     {
         Direction = Vector2.zero;
@@ -71,15 +70,36 @@ public class EnemyControl : MonoBehaviour
                 Direction = Vector2.up;
                 break;
         }
-
     }
+
+    private void EnemyAnimation()
+    {
+        EnemyAnimator.SetInteger("DirectionEnumValue", (int)State);
+    }
+
+    private void EnemyChangeModeAnimation()
+    {
+        EnemyAnimator.SetBool("isChangeModeON", isChangeMode);
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.CompareTag("MapPassage"))
         {
             transform.position = collision.transform.GetChild(0).transform.position;
-            Debug.Log("fweuf");
         }
+    }
+
+    public void EnemyChangeModeON()
+    {
+        StartCoroutine(EnemyChangeMode());
+    }
+
+    IEnumerator EnemyChangeMode()
+    {
+        isChangeMode = true;
+        yield return new WaitForSeconds(10.0f);
+        isChangeMode = false;
     }
 }

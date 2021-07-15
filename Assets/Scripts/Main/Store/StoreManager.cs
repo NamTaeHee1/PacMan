@@ -12,10 +12,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         [SerializeField] private GameObject CharacterColorContent;
 
-        public static List<ColorInfo> CharacterColorList = new List<ColorInfo>();
-        public static ColorInfo CharacterColor;
-
-        [SerializeField] private SimpleScrollSnap CharacterSimpleScrollSnap;
 
         [SerializeField] private TextMeshProUGUI PointMoneyText;
 
@@ -29,6 +25,12 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         {
             CharacterColor = CharacterColorContent.transform.GetChild(0).GetComponent<ColorInfo>();
         }
+
+
+        public static List<ColorInfo> CharacterColorList = new List<ColorInfo>();
+        public static ColorInfo CharacterColor;
+
+        [SerializeField] private SimpleScrollSnap CharacterSimpleScrollSnap;
 
         private void CharacterColorListUpdate()
         {
@@ -49,6 +51,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             }
             CharacterSimpleScrollSnap.GoToPanel(SelectedPanelIndex);
         }
+
 
         public void ReloadPointMoney()
         {
